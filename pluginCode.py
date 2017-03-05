@@ -1,5 +1,5 @@
 import math
-import types
+
 file = open ('a.txt', "r")
 data = file.read()
 asci = [ord(c) for c in data]
@@ -12,6 +12,7 @@ print(type(x))
 n= 0
 status = False
 print (math.sqrt(x))
+
 '''
 if isinstance(math.sqrt(x), int):
     print(Hi)
@@ -26,8 +27,11 @@ elif isinstance(math.sqrt(x), float):
             status = True
 
 print(n)
+
 '''
-if(type(math.sqrt(x))==types.IntType):
+
+
+if(type(math.sqrt(x))==type(1)):
     print(Hi)
     status = True
 elif (type(math.sqrt(x))==types.FloatType):
