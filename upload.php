@@ -5,7 +5,7 @@ $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if uplaod is a text file
 if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    $check = mime_content_type($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is a text file - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -40,7 +40,7 @@ $expensions= array("txt","doc","docx");
       }
       
       if(empty($errors)==true){
-         move_uploaded_file($file_tmp,"images/".$file_name);
+         move_uploaded_file($file_tmp,"documents/".$file_name);
          echo "Success";
       }else{
          print_r($errors);
