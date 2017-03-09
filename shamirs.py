@@ -27,8 +27,9 @@ if(n <4 ):
     print ("The system is currently incapable of securing your data. Please try again later.")
 else:
     for i in range (0, n):
-        H= data + (R1*i) + (R2*i*i)
-        nodes[i] = H
+        x = random.randint(1, 1000)
+        H= data + (R1*x) + (R2*x*x)
+        nodes[x] = H
 print (nodes)
 '''
 suppose 10 is the max no. of nodes in the system
