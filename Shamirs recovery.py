@@ -7,5 +7,5 @@ if(n <4 ):
 else:
     for i in range(0,3):
         available = random.randint(0, 9)
-        
+
 

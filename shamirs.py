@@ -6,8 +6,26 @@ content = file.read()
 asci = [ord(c) for c in content]
 file.close()
 
+#for asci[0] in range (000,099)
+if 0 <= asci[0] <= 99 or asci[0] == 126:
+    asci.insert(0, 126)
 print(asci)
-data = 1234
+
+data = ''.join(map(str, asci))
+'''
+for i in range(0,len(asci)):
+    data[i] += asci[i]
+for asci[i] in range(0,len):
+    data=str[i] + str[i+1]
+print(data)
+
+data = 0
+for i in asci:
+    ''.join(data)'''
+print(data)
+
+#data = 1234
+
 #data = int(asci)
 '''for c in asci:
     if c in range(0,99):
@@ -28,7 +46,7 @@ if(n <4 ):
 else:
     for i in range (0, n):
         x = random.randint(1, 1000)
-        H= data + (R1*x) + (R2*x*x)
+        H= int(data) + (R1*x) + (R2*x*x)
         nodes[x] = H
 print (nodes)
 '''
