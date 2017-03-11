@@ -1,4 +1,5 @@
 import random
+import numpy
 from numpy import matrix
 from numpy import linalg
 #from odict import odict
@@ -21,6 +22,9 @@ else:
         matrixB.append([y])
     print (matrixA)
     print (matrixB)
+    Ainv = matrixA.I
+    result=Ainv * matrixB
+    print(result)
 
 
 
