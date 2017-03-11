@@ -11,6 +11,15 @@ if 0 <= asci[0] <= 99 or asci[0] == 126:
     asci.insert(0, 126)
 print(asci)
 
+#managing 2 digit numbers
+for n,i in enumerate(asci):
+    if 0 <= i <= 9:
+        asci[n] = '00' + str(i)
+    elif 10 <= i <= 99:
+        asci[n] = '0' + str(i)
+
+print(asci)
+
 data = ''.join(map(str, asci))
 '''
 for i in range(0,len(asci)):

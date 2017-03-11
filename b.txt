@@ -5,3 +5,8 @@ x = next(key for x, value in available() if value == 'choice(list(available.valu
 for key, value in list.iteritems():
     if age == search_age:
         print name
+
+a=[1,2,3,4,5,1,2,3,4,5,1]
+for n,i in enumerate(asci):
+    if 0 <= i <= 9:
+        asci[n]=int('00' + str(i))
