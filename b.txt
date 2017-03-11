@@ -10,3 +10,13 @@ a=[1,2,3,4,5,1,2,3,4,5,1]
 for n,i in enumerate(asci):
     if 0 <= i <= 9:
         asci[n]=int('00' + str(i))
+def __invert__(self):
+        try:
+            determinant = abs(self)
+        except:
+            return self #Returns, if not invertible
+        news = Matrix.transpose(self)
+        news = [[(-1) ** (column + row) * abs(Matrix([[news.row[k][i] for i in range(len(self.row[0])) if i != column] for k in range(len(self.row)) if k != row])) for column in range(len(self.row[0]))] for row in range(len(self.row))]
+        return Matrix.scalar( Matrix(news),1/determinant)
+
+        rom numpy.linalg import inv
