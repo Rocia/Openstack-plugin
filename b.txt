@@ -1,0 +1,7 @@
+        '''x = choice(list(available.values()))'''
+x = available.values()[node]
+x = next(key for x, value in available() if value == 'choice(list(available.values()))')
+
+for key, value in list.iteritems():
+    if age == search_age:
+        print name
