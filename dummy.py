@@ -65,6 +65,9 @@ else:
 
     print(Ai)
 
+    result = np.dot(Ai, B)
+
+    print(result)
 
 
 

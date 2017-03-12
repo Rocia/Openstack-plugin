@@ -51,7 +51,7 @@ R1= random.randint(1, 1000)
 R2= random.randint(1, 1000)
 nodes = {}
 
-# create poolynomial as data + rand1X+ rand2X^2
+# create polynomial as data + rand1X+ rand2X^2
 print (n)
 if(n <4 ):
     print ("The system is currently incapable of securing your data. Please try again later.")
@@ -61,11 +61,3 @@ else:
         H= int(data) + (R1*x) + (R2*x*x)
         nodes[x] = H
 print (nodes)
-'''
-suppose 10 is the max no. of nodes in the system
-'''
-
-
-
-
-'''x = choice(list(available.values()))'''
