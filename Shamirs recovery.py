@@ -25,9 +25,9 @@ else:
 
     print(A)
     print(B)
-    Ai = np.linalg.inv(A)
+   #Ai = np.linalg.inv(A)
 
-    print(Ai)
+    #print(Ai)
 
     '''# result is 3x4
     result = [[0],
@@ -46,7 +46,7 @@ else:
         print(r)
 
     '''
-    result = Ai * B
+    result = np.linalg.inv(A) * B
 
     print(result)
 
