@@ -29,9 +29,9 @@ else:
     print(A,B)
     
     # In = I-a(all except an)/an-a(all except an)
-    I0 = sympy.solve(sympy.solve(X-A[1])(X-A[2])/(sympy.solve(A[0]-A[1])(A[0]-A[2])))
-    I1 = sympy.solve(sympy.solve(X-A[0])(X-A[2])/(sympy.solve(A[1]-A[0])(A[1]-A[2])))
-    I2 = sympy.solve(sympy.solve(X-A[1])(X-A[0])/(sympy.solve(A[2]-A[1])(A[2]-A[0])))
+    I0 = sympy.solve(sympy.solve(X-A[1])(X-A[2])/((A[0]-A[1])(A[0]-A[2])))
+    I1 = sympy.solve(sympy.solve(X-A[0])(X-A[2])/((A[1]-A[0])(A[1]-A[2])))
+    I2 = sympy.solve(sympy.solve(X-A[1])(X-A[0])/((A[2]-A[1])(A[2]-A[0])))
 
     #result is recieved as summation of all bnIn
     result = sympy.solve((B[0](I0))+(B[1](I1))+(B[2](I2)))
