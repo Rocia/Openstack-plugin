@@ -1,10 +1,8 @@
 from __future__ import division
 import random
-from sympy import Symbol, solve
-import mpmath
-import numpy as np
 
 available = {896: 126126114111032101108267893162, 145: 126126114111032101108037789929, 66: 126126114111032101108033286850, 613: 126126114111032101108133329321, 545: 126126114111032101108112130729, 780: 126126114111032101108195947474, 602: 126126114111032101108129731474, 983: 126126114111032101108292268741, 988: 126126114111032101108294920946, 431: 126126114111032101108082173125}
+#available ={1:2172, 2:2383, 3:2632, 4:2919, 5:3244, 6:3607}
 #In a real time system the available dictionary will be filled with the data obtained from the different nodes.
 
 recover = [ [k,v] for k, v in available.items() ]
@@ -13,7 +11,6 @@ recover = [ [k,v] for k, v in available.items() ]
 A = []
 B = []
 rand = []
-X = Symbol('X')
 n = random.randint(0, 9)
 if(n <4 ):
     # if the number of data bits available is less than 3 the system will be incapable of recovering the data.
@@ -28,22 +25,13 @@ else:
         B.append(y)
         recover.remove(rand)
 
-    AA = np.asarray(A)
-    BB = np.asarray(B)
 
-    AA = [int(i) for i in A]
     # In = I-a(all except an)/an-a(all except an)
-    N0 = (solve(X-AA[1])*(X-AA[2]))
-    D0 = (AA[0]-AA[1])*(AA[0]-AA[2])
-    #I0 = solve(N0/D0)
-    '''I1 = solve((solve(X-A[0])*(X-A[2]))/((A[1]-A[0])*(A[1]-A[2])))
-    I2 = solve((solve(X-A[1])*(X-A[0]))/((A[2]-A[1])*(A[2]-A[0])))
-    '''
 
 
     #result is recieved as summation of all bnIn
-    #result = solve((B[0]*(I0))+(B[1]*(I1))+(B[2]*(I2)))
-    #print (I0)
+    result = int(((B[0] * A[1] * A[2]) / ((A[0] - A[1]) * (A[0] - A[2])))+((B[1] * A[0] * A[2]) / ((A[1] - A[0]) * (A[1] - A[2])))+((B[2] * A[0] * A[1]) / ((A[2] - A[0]) * (A[2] - A[1]))))
+    print(result)
 
 
 

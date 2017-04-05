@@ -2,11 +2,13 @@ import math
 import random
 import itertools
 
-def isPrime(n):
+'''
+def isprime(n):
     for m in range(2, int(n**0.5)+1):
         if not n%m:
             return False
     return True
+'''
 
 file = open ('a.txt', "r")
 content = file.read()
@@ -40,20 +42,21 @@ n = random.randint(1, 10)
 
 # rand function for random prime numbers
 x = len(data)
-l = '1'+('0'*x)
-length = int (l)
+l = '1'+('0'*(x-1))
+length = int(l)
+print(length)
 
 R1= random.randint(length/2,length)
-R2= random.randint(length/2,length)
+R2= random.randint(0,length/2)
 nodes = {}
 
 # create polynomial as data + rand1X+ rand2X^2
 print (n)
-if(n <4 ):
+if n <4 :
     print ("The system is currently incapable of securing your data. Please try again later.")
 else:
     for i in range (0, n):
-        x = next(i for i in itertools.imap(lambda x: random.randint(1,1000)|1,itertools.count()) if isPrime(i))
+        x = random.randint(-length/2,-1)
         H= int(data) + (R1*x) + (R2*x*x)
         nodes[x] = H
 print (nodes)
